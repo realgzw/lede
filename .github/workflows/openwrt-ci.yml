@@ -121,40 +121,54 @@ jobs:
 
           # 多文件系统支持:
           cat >> .config <<EOF
+          CONFIG_PACKAGE_kmod-fs-msdos=y
           CONFIG_PACKAGE_kmod-fs-nfs=y
-          CONFIG_PACKAGE_kmod-fs-nfs-common=y
-          CONFIG_PACKAGE_kmod-fs-nfs-v3=y
-          CONFIG_PACKAGE_kmod-fs-nfs-v4=y
           CONFIG_PACKAGE_kmod-fs-ntfs=y
-          CONFIG_PACKAGE_kmod-fs-squashfs=y
+          CONFIG_PACKAGE_kmod-fs-vfat=y
           EOF
 
           # USB3.0支持:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_kmod-usb-ohci=y
-          CONFIG_PACKAGE_kmod-usb-ohci-pci=y
+          CONFIG_PACKAGE_block-mount=y
+          CONFIG_PACKAGE_blockd=y
           CONFIG_PACKAGE_kmod-usb2=y
           CONFIG_PACKAGE_kmod-usb2-pci=y
           CONFIG_PACKAGE_kmod-usb3=y
+          CONFIG_PACKAGE_kmod-usb-storage=y
+          CONFIG_PACKAGE_kmod-usb-storage-extras=y
+          CONFIG_PACKAGE_kmod-usb-storage-uas=y
+          CONFIG_PACKAGE_cfdisk=y
+          CONFIG_PACKAGE_hd-idle=y
+          CONFIG_PACKAGE_hdparm=y
+          CONFIG_PACKAGE_smartmontools=y
+          CONFIG_PACKAGE_smartmontools-drivedb=y
           EOF
 
           # 常用LuCI插件选择:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-app-minidlna=y
-          CONFIG_PACKAGE_luci-app-qbittorrent=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-          CONFIG_PACKAGE_luci-app-ttyd=y
+          CONFIG_PACKAGE_luci-app-ddns=y
           CONFIG_PACKAGE_luci-app-autoreboot=y
           CONFIG_PACKAGE_luci-app-cifsd=y
           CONFIG_PACKAGE_luci-app-mwan3helper=y
+          CONFIG_PACKAGE_luci-app-mwan3=y
           CONFIG_PACKAGE_luci-app-vlmcsd=y
+          CONFIG_PACKAGE_luci-app-transmission=y
+          CONFIG_UnblockNeteaseMusic_Go=y
+          CONFIG_PACKAGE_luci-app-upnp=y
+          # CONFIG_PACKAGE_luci-app-minidlna is not set
+          # CONFIG_PACKAGE_luci-app-zerotier is not set
+          # CONFIG_PACKAGE_luci-app-adblock is not set
+          # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
+          # CONFIG_PACKAGE_luci-app-accesscontrol is not set
+          # CONFIG_DEFAULT_luci-app-arpbind is not set
+          # CONFIG_DEFAULT_luci-app-filetransfer is not set
           EOF
 
           # LuCI主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
-          CONFIG_PACKAGE_luci-theme-netgear=y
           EOF
 
           # 常用软件包:
